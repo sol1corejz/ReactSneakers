@@ -19,7 +19,7 @@ const Slider = () => {
         </button>
       </div>
       <img src={SliderImg1} alt="slider-img" className="rounded-r-3xl" />
-      <span className="rounded-full absolute -right-4 top-44 bg-white">
+      <span className="rounded-full absolute -right-4 top-44 bg-white cursor-pointer">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
