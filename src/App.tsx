@@ -1,14 +1,18 @@
+import React, { useState } from 'react';
 import Header from './components/Hedaer/Header';
 import Slider from './components/Slider';
 import SneakersCard from './components/SneakersCard';
 //@ts-ignore
 import nikeBlazer from './assets/images/nikeBlazer.jpg';
+import Cart from './components/Cart';
 
 function App() {
+  const [isOpenCart, setIsOpenCart] = useState(false);
+
   return (
-    <div className="bg-blue-300 py-16">
-      <div className="container mx-auto max-w-6xl bg-white px-11 rounded-xl">
-        <Header />
+    <div className="bg-blue-300 relative py-16">
+      <div className="container mx-auto max-w-6xl bg-white px-11 rounded-xl z-0">
+        <Header openCart={setIsOpenCart} />
         <hr />
         <Slider />
         <div>
@@ -40,49 +44,10 @@ function App() {
               price={12500}
               title={'Мужские Кроссовки Nike Blazer Mid Suede'}
             />
-            <SneakersCard
-              sneakersImage={nikeBlazer}
-              price={12500}
-              title={'Мужские Кроссовки Nike Blazer Mid Suede'}
-            />
-            <SneakersCard
-              sneakersImage={nikeBlazer}
-              price={12500}
-              title={'Мужские Кроссовки Nike Blazer Mid Suede'}
-            />
-            <SneakersCard
-              sneakersImage={nikeBlazer}
-              price={12500}
-              title={'Мужские Кроссовки Nike Blazer Mid Suede'}
-            />
-            <SneakersCard
-              sneakersImage={nikeBlazer}
-              price={12500}
-              title={'Мужские Кроссовки Nike Blazer Mid Suede'}
-            />
-            <SneakersCard
-              sneakersImage={nikeBlazer}
-              price={12500}
-              title={'Мужские Кроссовки Nike Blazer Mid Suede'}
-            />
-            <SneakersCard
-              sneakersImage={nikeBlazer}
-              price={12500}
-              title={'Мужские Кроссовки Nike Blazer Mid Suede'}
-            />
-            <SneakersCard
-              sneakersImage={nikeBlazer}
-              price={12500}
-              title={'Мужские Кроссовки Nike Blazer Mid Suede'}
-            />
-            <SneakersCard
-              sneakersImage={nikeBlazer}
-              price={12500}
-              title={'Мужские Кроссовки Nike Blazer Mid Suede'}
-            />
           </div>
         </div>
       </div>
+      <Cart openCart={setIsOpenCart} isOpen={isOpenCart} />
     </div>
   );
 }

@@ -7,7 +7,7 @@ import Like from '../../assets/images/likeLogo.png';
 //@ts-ignore
 import Profile from '../../assets/images/profileLogo.svg';
 
-const Header = () => {
+const Header = ({ openCart }: { openCart: (state: boolean) => void }) => {
   return (
     <header className="py-11 flex justify-between">
       <div className="flex space-x-4">
@@ -25,7 +25,10 @@ const Header = () => {
       </div>
       <div>
         <ul className="flex space-x-8">
-          <li className="flex space-x-2.5 cursor-pointer">
+          <li
+            onClick={() => openCart(true)}
+            className="flex space-x-2.5 cursor-pointer"
+          >
             <img
               src={Cart}
               alt="cart-icon"
